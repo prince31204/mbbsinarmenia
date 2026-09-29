@@ -2,12 +2,19 @@ import { prisma } from '../src/lib/prisma';
 import * as bcrypt from 'bcryptjs';
 
 async function main() {
-  console.log('🌱 Starting Comprehensive Mauritius Seeding...');
+  console.log('🌱 Starting Comprehensive Armenia Seeding...');
 
   // 1. Initialize Admin User
-  const adminEmail = process.env.ADMIN_EMAIL || 'admin@mbbsinmauritius.com';
-  const adminPassword = process.env.ADMIN_PASSWORD || 'Admin@1234';
-  const hashedPassword = await bcrypt.hash(adminPassword, 10);
+  const adminEmail = process.env.ADMIN_EMAIL;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+
+  if (!adminEmail || !adminPassword) {
+    throw new Error(
+      'ADMIN_EMAIL and ADMIN_PASSWORD must be defined in your .env file'
+    );
+  }
+
+  const hashedPassword = await bcrypt.hash(adminPassword as string, 10);
 
   const admin = await prisma.user.upsert({
     where: { email: adminEmail },
@@ -33,7 +40,7 @@ async function main() {
   }
   console.log('✅ Institute types seeded.');
 
-  // 3. Seed Provinces (Districts of Mauritius)
+  // 3. Seed Provinces (Districts of Armenia)
   const districts = [
     'Black River',
     'Flacq',
@@ -81,10 +88,10 @@ async function main() {
   console.log('✅ Cities seeded.');
 
   // 5. Seed About Country Page
-  const aboutMauritius = await prisma.aboutCountryPage.upsert({
+  const aboutArmenia = await prisma.aboutCountryPage.upsert({
     where: { id: 1 },
     update: {
-      name: 'Mauritius',
+      name: 'Armenia',
       tagline: 'Life and study in the Paradise Island',
       capital: 'Port Louis',
       population: '1.3 Million+',
@@ -98,7 +105,7 @@ async function main() {
       whoRecognized: true,
       mbbsAffordableEducation: 'High-quality medical education with manageable tuition fees and international recognition.',
       englishMedium: true,
-      academicExcellence: 'Mauritius follows a high-standard educational framework modeled on the British system.',
+      academicExcellence: 'Armenia follows a high-standard educational framework modeled on the British system.',
       studentLife: 'A safe, multicultural environment with modern infrastructure and stunning natural beauty.',
       visaConnectivity: 'Straightforward student visa process with excellent air connectivity to major global hubs.',
       publicHealthcare: 'Reliable public healthcare system alongside high-standard private clinics.',
@@ -106,7 +113,7 @@ async function main() {
     },
     create: {
       id: 1,
-      name: 'Mauritius',
+      name: 'Armenia',
       tagline: 'Life and study in the Paradise Island',
       capital: 'Port Louis',
       population: '1.3 Million+',
@@ -120,7 +127,7 @@ async function main() {
       whoRecognized: true,
       mbbsAffordableEducation: 'High-quality medical education with manageable tuition fees and international recognition.',
       englishMedium: true,
-      academicExcellence: 'Mauritius follows a high-standard educational framework modeled on the British system.',
+      academicExcellence: 'Armenia follows a high-standard educational framework modeled on the British system.',
       studentLife: 'A safe, multicultural environment with modern infrastructure and stunning natural beauty.',
       visaConnectivity: 'Straightforward student visa process with excellent air connectivity to major global hubs.',
       publicHealthcare: 'Reliable public healthcare system alongside high-standard private clinics.',
@@ -138,23 +145,23 @@ async function main() {
   for (const city of majorCitiesAbout) {
     await prisma.countryMajorCity.upsert({
       where: { id: majorCitiesAbout.indexOf(city) + 1 },
-      update: { ...city, pageId: aboutMauritius.id },
-      create: { ...city, pageId: aboutMauritius.id },
+      update: { ...city, pageId: aboutArmenia.id },
+      create: { ...city, pageId: aboutArmenia.id },
     });
   }
 
   // Seed Cuisines
   const cuisines = [
     { dishName: 'Dholl Puri', dishDescription: "Most popular street food - soft flatbread with split peas." },
-    { dishName: 'Mauritian Biryani', dishDescription: 'Fragrant rice dish with spices and multicultural influences.' },
+    { dishName: 'Armenian Biryani', dishDescription: 'Fragrant rice dish with spices and multicultural influences.' },
     { dishName: 'Rougaille', dishDescription: 'Classic tomato-based creole sauce.' },
   ];
 
   for (const cuisine of cuisines) {
     await prisma.countryCuisineLifestyle.upsert({
       where: { id: cuisines.indexOf(cuisine) + 1 },
-      update: { ...cuisine, pageId: aboutMauritius.id },
-      create: { ...cuisine, pageId: aboutMauritius.id },
+      update: { ...cuisine, pageId: aboutArmenia.id },
+      create: { ...cuisine, pageId: aboutArmenia.id },
     });
   }
 
@@ -168,8 +175,8 @@ async function main() {
   for (const attraction of attractions) {
     await prisma.countryTouristAttraction.upsert({
       where: { id: attractions.indexOf(attraction) + 1 },
-      update: { ...attraction, pageId: aboutMauritius.id },
-      create: { ...attraction, pageId: aboutMauritius.id },
+      update: { ...attraction, pageId: aboutArmenia.id },
+      create: { ...attraction, pageId: aboutArmenia.id },
     });
   }
 
@@ -183,20 +190,20 @@ async function main() {
   for (const lifestyle of lifestyles) {
     await prisma.countryLifestyleCulture.upsert({
       where: { id: lifestyles.indexOf(lifestyle) + 1 },
-      update: { ...lifestyle, pageId: aboutMauritius.id },
-      create: { ...lifestyle, pageId: aboutMauritius.id },
+      update: { ...lifestyle, pageId: aboutArmenia.id },
+      create: { ...lifestyle, pageId: aboutArmenia.id },
     });
   }
-  console.log('✅ About Mauritius content seeded.');
+  console.log('✅ About Armenia content seeded.');
 
   // 6. Seed Education System
   const eduSystem = await prisma.educationSystem.upsert({
     where: { id: 1 },
     update: {
-      title: 'Education System in Mauritius',
-      description: 'The Mauritian education system is modeled on the British system and has seen significant development since independence.',
+      title: 'Education System in Armenia',
+      description: 'The Armenian education system is modeled on the British system and has seen significant development since independence.',
       introductionTitle: 'A Legacy of Excellence',
-      introductionDescription: 'Mauritius offers free education to all citizens at primary and secondary levels, fostering a highly literate population.',
+      introductionDescription: 'Armenia offers free education to all citizens at primary and secondary levels, fostering a highly literate population.',
       literacyRate: 91.3,
       higherEducationDescription: 'The higher education sector includes public and private universities offering globally recognized degrees.',
       universitiesCount: 15,
@@ -208,10 +215,10 @@ async function main() {
     },
     create: {
       id: 1,
-      title: 'Education System in Mauritius',
-      description: 'The Mauritian education system is modeled on the British system and has seen significant development since independence.',
+      title: 'Education System in Armenia',
+      description: 'The Armenia education system is modeled on the British system and has seen significant development since independence.',
       introductionTitle: 'A Legacy of Excellence',
-      introductionDescription: 'Mauritius offers free education to all citizens at primary and secondary levels, fostering a highly literate population.',
+      introductionDescription: 'Armenia offers free education to all citizens at primary and secondary levels, fostering a highly literate population.',
       literacyRate: 91.3,
       higherEducationDescription: 'The higher education sector includes public and private universities offering globally recognized degrees.',
       universitiesCount: 15,
@@ -255,10 +262,10 @@ async function main() {
 
   // 7. Seed Static Page SEO
   const seos = [
-    { page: 'home', metaTitle: 'Study MBBS in Mauritius | Direct Admission, Low Fees 2026', metaDescription: 'Apply for MBBS in Mauritius with direct admission to top-ranked medical universities. MCAT/NEET qualified students can join English-medium programs.' },
-    { page: 'about-mauritius', metaTitle: 'About Mauritius | Student Lifestyle, Geography & Climate', metaDescription: 'Discover life in Mauritius for international students. A safe, beautiful, and multicultural island nation with high-standard education.' },
-    { page: 'universities', metaTitle: 'Medical Universities in Mauritius | Top MBBS Colleges 2026', metaDescription: 'Compare the best medical universities in Mauritius. Fee structures, admission requirements, and global rankings for international students.' },
-    { page: 'contact', metaTitle: 'Contact Us | Professional MBBS Counselling for Mauritius', metaDescription: 'Get expert guidance for your medical education in Mauritius. Speak to our counsellors for admission assistance today.' },
+    { page: 'home', metaTitle: 'Study MBBS in Armenia | Direct Admission, Low Fees 2026', metaDescription: 'Apply for MBBS in Armenia with direct admission to top-ranked medical universities. MCAT/NEET qualified students can join English-medium programs.' },
+    { page: 'about-armenia', metaTitle: 'About Armenia | Student Lifestyle, Geography & Climate', metaDescription: 'Discover life in Armenia for international students. A safe, beautiful, and multicultural island nation with high-standard education.' },
+    { page: 'universities', metaTitle: 'Medical Universities in Armenia | Top MBBS Colleges 2026', metaDescription: 'Compare the best medical universities in Armenia. Fee structures, admission requirements, and global rankings for international students.' },
+    { page: 'contact', metaTitle: 'Contact Us | Professional MBBS Counselling for Armenia', metaDescription: 'Get expert guidance for your medical education in Armenia. Speak to our counsellors for admission assistance today.' },
   ];
 
   for (const seo of seos) {

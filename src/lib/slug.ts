@@ -6,18 +6,18 @@
 
 /**
  * Convert a string to a URL-friendly slug.
- * Example: "Mauritius State Medical Academy" -> "Mauritius-state-medical-academy"
+ * Example: "Armenia State Medical Academy" -> "Armenia-state-medical-academy"
  */
 export function slugify(text: string): string {
-    return text
-        .toString()
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, "-")           // spaces to hyphens
-        .replace(/[^\w-]+/g, "")       // remove non-word chars
-        .replace(/--+/g, "-")          // collapse multiple hyphens
-        .replace(/^-+/, "")            // trim leading hyphen
-        .replace(/-+$/, "");           // trim trailing hyphen
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-") // spaces to hyphens
+    .replace(/[^\w-]+/g, "") // remove non-word chars
+    .replace(/--+/g, "-") // collapse multiple hyphens
+    .replace(/^-+/, "") // trim leading hyphen
+    .replace(/-+$/, ""); // trim trailing hyphen
 }
 
 /**
@@ -26,16 +26,16 @@ export function slugify(text: string): string {
  * @param existsCheck - async function that returns true if slug is taken
  */
 export async function uniqueSlug(
-    baseSlug: string,
-    existsCheck: (slug: string) => Promise<boolean>
+  baseSlug: string,
+  existsCheck: (slug: string) => Promise<boolean>,
 ): Promise<string> {
-    let slug = baseSlug;
-    let counter = 1;
+  let slug = baseSlug;
+  let counter = 1;
 
-    while (await existsCheck(slug)) {
-        slug = `${baseSlug}-${counter}`;
-        counter++;
-    }
+  while (await existsCheck(slug)) {
+    slug = `${baseSlug}-${counter}`;
+    counter++;
+  }
 
-    return slug;
+  return slug;
 }

@@ -1,5 +1,5 @@
 {
-  "name": "mbbsinmauritius-nextjs",
+  "name": "mbbsinarmenia-nextjs",
   "version": "0.1.0",
   "private": true,
   "overrides": {
@@ -12,9 +12,9 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "dotenv -e .env -- npx ts-node --project tsconfig.json -e 'require(\"./prisma/seed.ts\")'",
-    "seed:mauritius": "npx tsx scripts/seed-mauritius.ts",
-    "seed:mauritius:all": "npx tsx scripts/seed-mauritius-comprehensive.ts",
-    "seed:mauritius:universities": "npx tsx scripts/seed-mauritius-universities.ts",
+    "seed:armenia": "npx dotenv-cli -e .env -- npx tsx scripts/seed-armenia.ts",
+    "seed:armenia:all": "npx dotenv-cli -e .env -- npx tsx scripts/seed-armenia-comprehensive.ts",
+    "seed:armenia:universities": "npx dotenv-cli -e .env -- npx tsx scripts/seed-armenia-universities.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -27,6 +27,8 @@
     "@prisma/adapter-pg": "^7.4.0",
     "@prisma/client": "^7.7.0",
     "@react-email/components": "^1.0.8",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
     "@tanstack/react-query": "^5.90.21",
     "@tanstack/react-query-devtools": "^5.91.3",
     "@types/nodemailer": "^7.0.11",

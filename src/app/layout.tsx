@@ -3,17 +3,18 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { APP_YEAR, ADMISSION_YEAR } from "@/lib/seo";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mbbsinmauritius.com";
-const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "MBBS in Mauritius";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://mbbsinarmenia.com";
+const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "MBBS in Armenia";
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} — Study MBBS in Mauritius ${APP_YEAR}`,
+    default: `${SITE_NAME} — Study MBBS in Armenia ${APP_YEAR}`,
     template: `%s | ${SITE_NAME}`,
   },
-  description:
-    `Study MBBS in Mauritius at top MCI-recognized medical universities. Low tuition fees, English-medium programs, high FMGE pass rates. Apply for ${ADMISSION_YEAR} admissions.`,
-  keywords: "MBBS in Mauritius, study MBBS Mauritius, medical university Mauritius, MCI recognized Mauritius",
+  description: `Study MBBS in Armenia at top MCI-recognized medical universities. Low tuition fees, English-medium programs, high FMGE pass rates. Apply for ${ADMISSION_YEAR} admissions.`,
+  keywords:
+    "MBBS in Armenia, study MBBS Armenia, medical university Armenia, MCI recognized Armenia",
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: SITE_URL },
   openGraph: {
@@ -21,8 +22,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Study MBBS in Mauritius ${APP_YEAR}`,
-    description: "Study MBBS in Mauritius at top MCI-recognized medical universities.",
+    title: `${SITE_NAME} — Study MBBS in Armenia ${APP_YEAR}`,
+    description:
+      "Study MBBS in Armenia at top MCI-recognized medical universities.",
     images: [
       {
         url: `${SITE_URL}/og-default.jpg`,
@@ -34,14 +36,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Study MBBS in Mauritius ${APP_YEAR}`,
-    description: "Study MBBS in Mauritius at top MCI-recognized medical universities.",
+    title: `${SITE_NAME} — Study MBBS in Armenia ${APP_YEAR}`,
+    description:
+      "Study MBBS in Armenia at top MCI-recognized medical universities.",
     images: [`${SITE_URL}/og-default.jpg`],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -49,7 +58,11 @@ import { auth } from "@/lib/auth";
 import Script from "next/script";
 import CookieConsent from "@/components/common/CookieConsent";
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const session = await auth();
 
   return (

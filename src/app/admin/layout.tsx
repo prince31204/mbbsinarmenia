@@ -3,14 +3,18 @@ import { AdminShell } from "@/components/admin/AdminShell";
 import { Toaster } from "sonner";
 
 export const metadata = {
-    title: { default: "Admin Panel | MBBS Mauritius", template: "%s | Admin" },
+  title: { default: "Admin Panel | MBBS Armenia", template: "%s | Admin" },
 };
 
-export default async function AdminLayout({ children }: { children: ReactNode }) {
-    return (
-        <>
-            <AdminShell>{children}</AdminShell>
-            <Toaster richColors position="top-right" />
-        </>
-    );
+export default async function AdminLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <>
+      <AdminShell>{children}</AdminShell>
+      <Toaster richColors position="top-right" />
+    </>
+  );
 }

@@ -5,27 +5,27 @@ import OurPartnersContent from "@/components/partners/OurPartnersContent";
 import { prisma } from "@/lib/prisma";
 
 export const metadata: Promise<Metadata> = buildMetadata({
-    title: "Our Partners - Universities and Organizations | mbbsinmauritius.com",
-    description:
-        "Meet our official partner medical universities and international organizations that support transparent MBBS admissions in Mauritius.",
-    entitySeo: {
-        metaKeyword:
-            "mbbs Mauritius partners, partner universities Mauritius, official mbbs partners",
-    },
-    path: "/our-partners",
+  title: "Our Partners - Universities and Organizations | mbbsinarmenia.com",
+  description:
+    "Meet our official partner medical universities and international organizations that support transparent MBBS admissions in Armenia.",
+  entitySeo: {
+    metaKeyword:
+      "mbbs Armenia partners, partner universities Armenia, official mbbs partners",
+  },
+  path: "/our-partners",
 });
 
 export default async function OurPartnersPage() {
-    const partners = await prisma.partnerInquiry.findMany({
-        where: { status: "converted" },
-        orderBy: { createdAt: "desc" },
-    });
+  const partners = await prisma.partnerInquiry.findMany({
+    where: { status: "converted" },
+    orderBy: { createdAt: "desc" },
+  });
 
-    // Convert Decimal fields to plain numbers for Client Component serialization
-    const convertedPartners = partners.map((p) => ({
-        ...p,
-        rating: p.rating ? Number(p.rating) : null,
-    }));
+  // Convert Decimal fields to plain numbers for Client Component serialization
+  const convertedPartners = partners.map((p) => ({
+    ...p,
+    rating: p.rating ? Number(p.rating) : null,
+  }));
 
-    return <OurPartnersContent dynamicPartners={convertedPartners} />;
+  return <OurPartnersContent dynamicPartners={convertedPartners} />;
 }

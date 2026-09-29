@@ -1,4 +1,4 @@
-# MBBS in Mauritius — Testing Checklist
+# MBBS in Armenia — Testing Checklist
 
 > **Last Updated:** 2026-04-18
 > **Status:** 🔴 Not Started
@@ -431,7 +431,7 @@
 ### B1. Public-Facing Pages
 
 - [ ] **Homepage** (`/`) — Hero loads, CTA buttons work, university cards render, testimonials carousel, lead form submits
-- [ ] **About Mauritius** (`/about-Mauritius`) — Content renders, images load, meta tags present
+- [ ] **About Armenia** (`/about-Armenia`) — Content renders, images load, meta tags present
 - [ ] **About Us** (`/about-us`) — Team section, company info
 - [ ] **Universities List** (`/universities`) — Cards display, search/filter works, links to detail
 - [ ] **University Detail** (`/universities/[slug]`) — Overview, programs, facilities, rankings, FAQs, photos, reviews, FMGE rates tabs all load

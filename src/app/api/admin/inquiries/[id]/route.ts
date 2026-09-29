@@ -5,24 +5,27 @@ import { requireAdmin } from "@/lib/adminAuth";
 type Params = { params: Promise<{ id: string }> };
 
 export async function PATCH(req: NextRequest, { params }: Params) {
-    const { session, error: authError } = await requireAdmin();
-    if (authError) return authError;
+  const { session, error: authError } = await requireAdmin();
+  if (authError) return authError;
 
-    const { id } = await params;
-    const { status } = await req.json();
+  const { id } = await params;
+  const { status } = await req.json();
 
-    if (!status) {
-        return NextResponse.json({ error: "Status is required" }, { status: 400 });
-    }
+  if (!status) {
+    return NextResponse.json({ error: "Status is required" }, { status: 400 });
+  }
 
-    try {
-        const inquiry = await prisma.leadInquiry.update({
-            where: { id: parseInt(id) },
-            data: { status }
-        });
-        return NextResponse.json(inquiry);
-    } catch (err) {
-        console.error("Failed to update inquiry status:", err);
-        return NextResponse.json({ error: "Failed to update inquiry status" }, { status: 500 });
-    }
+  try {
+    const inquiry = await prisma.leadInquiry.update({
+      where: { id: parseInt(id) },
+      data: { status },
+    });
+    return NextResponse.json(inquiry);
+  } catch (err) {
+    console.error("Failed to update inquiry status:", err);
+    return NextResponse.json(
+      { error: "Failed to update inquiry status" },
+      { status: 500 },
+    );
+  }
 }

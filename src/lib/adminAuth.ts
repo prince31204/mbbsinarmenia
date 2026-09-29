@@ -3,34 +3,34 @@ import { NextResponse } from "next/server";
 import type { Session } from "next-auth";
 
 type AdminAuthResult =
-    | { session: Session; error?: never }
-    | { session?: never; error: NextResponse };
+  | { session: Session; error?: never }
+  | { session?: never; error: NextResponse };
 
 /**
  * Use at the top of any /api/admin/* route handler.
  * Returns { session } on success, or { error: NextResponse } to return immediately.
  *
  * Usage:
- *   const { session, error } = await requireAdmin();
- *   if (error) return error;
+ * const { session, error } = await requireAdmin();
+ * if (error) return error;
  */
 export async function requireAdmin(): Promise<AdminAuthResult> {
-    const session = await auth();
+  const session = await auth();
 
-    if (!session) {
-        return {
-            error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }),
-        };
-    }
+  if (!session) {
+    return {
+      error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }),
+    };
+  }
 
-    const role = (session.user as { role?: string })?.role;
-    if (role !== "admin" && role !== "employee") {
-        return {
-            error: NextResponse.json({ error: "Forbidden" }, { status: 403 }),
-        };
-    }
+  const role = (session.user as { role?: string })?.role;
+  if (role !== "admin" && role !== "employee") {
+    return {
+      error: NextResponse.json({ error: "Forbidden" }, { status: 403 }),
+    };
+  }
 
-    return { session };
+  return { session };
 }
 
 /**
@@ -38,5 +38,5 @@ export async function requireAdmin(): Promise<AdminAuthResult> {
  * Returns { session } on success, or { error: NextResponse } to return immediately.
  */
 export async function requireAuthenticatedAdmin(): Promise<AdminAuthResult> {
-    return requireAdmin();
+  return requireAdmin();
 }

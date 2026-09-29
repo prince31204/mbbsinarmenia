@@ -96,20 +96,20 @@ export default async function AboutUsPage() {
               from Every Corner of the World
             </span>
           </h1>
-          <p className="text-xl text-red-50 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
             mbbsinarmenia.com is dedicated to bridging the gap between aspiring
             medical students and world-class quality education in Armenia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/universities"
-              className="bg-white text-[#285BB5] hover:bg-gray-100 font-bold px-10 py-4 rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95"
+              className="bg-yellow-500 text-black hover:bg-gray-100 font-bold px-10 py-4 rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95"
             >
               Explore Universities
             </Link>
             <Link
               href="/contact-us"
-              className="border-2 border-gray-200 hover:border-gray-200 text-gray-900 font-bold px-10 py-4 rounded-xl transition-all hover:bg-gray-100"
+              className="bg-red-600 text-white hover:bg-red-700 font-bold px-10 py-4 rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95"
             >
               Get Free Counseling
             </Link>
@@ -209,15 +209,15 @@ export default async function AboutUsPage() {
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-3xl bg-[#101B4D] p-10 text-gray-900 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:">
+          <div className="group relative overflow-hidden rounded-3xl bg-[#101B4D] p-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-1">
             <div className="pointer-events-none absolute inset-0 bg-[#EAF1FB]0/15 via-transparent to-white/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <div className="absolute top-0 right-0 p-8 opacity-10">
               <GraduationCap className="w-32 h-32" />
             </div>
-            <h3 className="relative mb-2 flex items-center gap-3 text-3xl font-bold text-gray-900">
+            <h3 className="relative mb-2 flex items-center gap-3 text-3xl font-bold text-white">
               What Makes Us Different ?
             </h3>
-            <p className="relative mb-8 text-slate-600 text-lg">
+            <p className="relative mb-8 text-slate-300 text-lg">
               Unlike general study abroad consultants, we are 100% focused on
               Armenia medical education.
             </p>
@@ -260,7 +260,7 @@ export default async function AboutUsPage() {
                       {item.points.map((p, i) => (
                         <li
                           key={i}
-                          className="text-red-50 text-[15px] leading-relaxed opacity-90 flex items-start gap-2"
+                          className="text-gray-600 text-[15px] leading-relaxed opacity-90 flex items-start gap-2"
                         >
                           <span className="text-green-400/60 mt-1.5 h-1 w-1 rounded-full bg-current shrink-0" />
                           {p}
@@ -349,9 +349,8 @@ export default async function AboutUsPage() {
       <div className="bg-white text-gray-900 py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl lg:text-5xl font-black mb-6">
-            Ready to Start Your{" "}
-            <span className="text-red-600">MBBS Journey?</span>
+          <h2 className="text-4xl lg:text-5xl font-black mb-6  text-gray-900">
+            Ready to Start Your MBBS Journey?
           </h2>
           <p className="text-gray-600 text-xl mb-12 font-light">
             Join the global community of students pursuing their medical careers
@@ -360,15 +359,15 @@ export default async function AboutUsPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
               href="/contact-us"
-              className="bg-red-600 text-white hover:bg-red-700 font-bold px-12 py-5 rounded-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+              className="bg-green-600 text-white hover:bg-green-700 font-bold px-12 py-5 rounded-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
             >
-              <Phone className="w-5 h-5" /> Book Free Consultation
+              <Phone className="w-5 h-5" /> Call Us
             </Link>
             <Link
               href="/universities"
-              className="bg-gray-100 hover:bg-white/20 text-gray-900 font-bold px-12 py-5 rounded-2xl border border-gray-200 transition-all flex items-center justify-center gap-2"
+              className="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold px-12 py-5 rounded-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
             >
-              Browse Programs <ArrowRight className="w-5 h-5" />
+              Explore Universities <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>

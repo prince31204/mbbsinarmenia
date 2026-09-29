@@ -288,7 +288,7 @@ export default function OurPartnersContent({
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 mt-2">
             Our <span className="text-red-600">Partners</span> in India
           </h1>
-          <p className="text-red-50 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed mb-6">
+          <p className="text-gray-600 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed mb-6">
             Meet our trusted network of education consultants and partners
             across India who help students achieve their dreams of studying
             medicine abroad. From counseling to admissions, they provide
@@ -300,7 +300,7 @@ export default function OurPartnersContent({
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="inline-flex items-center gap-2 bg-white text-[#285BB5] font-bold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-colors shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-2 bg-red-600 text-white font-bold px-7 py-3.5 rounded-xl hover:bg-red-700 transition-colors shadow-lg cursor-pointer"
             >
               <Handshake className="w-5 h-5" />
               Become a Partner
@@ -732,7 +732,7 @@ export default function OurPartnersContent({
       </section>
 
       {/* -- BOTTOM CTA -- */}
-      <section className="relative overflow-hidden bg-white text-white py-16">
+      <section className="relative overflow-hidden bg-white text-gray-900 py-16">
         <div className="absolute -top-20 right-0 w-72 h-72 bg-[#EAF1FB]0/10 rounded-full hidden" />
         <div className="absolute bottom-0 left-10 w-60 h-60 bg-[#EAF1FB]0/10 rounded-full hidden" />
 

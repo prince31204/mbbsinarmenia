@@ -50,12 +50,12 @@ export default async function ArticlesPage() {
       <div className="bg-white text-gray-900 py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <BookOpen className="w-10 h-10 text-green-200" />
+            <BookOpen className="w-10 h-10 text-black" />
             <h1 className="text-4xl lg:text-5xl font-bold">
               Articles & Guides
             </h1>
           </div>
-          <p className="text-xl text-green-100 max-w-3xl mx-auto">
+          <p className="text-xl text-black-100 max-w-3xl mx-auto">
             In-depth guides and expert articles on MBBS in Armenia, admission
             tips, and student experiences.
           </p>

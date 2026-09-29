@@ -377,7 +377,7 @@ export default async function AboutArmeniaPage() {
           {" "}
           <div className="mb-6">
             {" "}
-            <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-red-600/80 px-6 py-2.5 text-xl font-semibold text-slate-600 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] ">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-red-600/80 px-6 py-2.5 text-xl font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] ">
               {" "}
               <MapPinned className="h-5 w-5" /> About Armenia{" "}
             </span>{" "}
@@ -1201,17 +1201,17 @@ export default async function AboutArmeniaPage() {
             {" "}
             <Link
               href="/universities"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-semibold text-[#285BB5] transition-colors hover:bg-white"
+              className="inline-flex items-center gap-2 rounded-full bg-yellow-500 text-black hover:bg-yellow-600 font-bold px-7 py-3 rounded-full transition-colors"
             >
               {" "}
               Explore Universities <ArrowRight className="h-4 w-4" />{" "}
             </Link>{" "}
             <Link
               href="/contact-us"
-              className="rounded-full border border-gray-200 px-7 py-3 font-semibold text-gray-900 transition-colors hover:bg-gray-100"
+              className="rounded-full bg-green-600 text-white hover:bg-green-700 font-bold px-7 py-3 transition-colors"
             >
               {" "}
-              Contact Us{" "}
+              Call Us{" "}
             </Link>{" "}
           </div>{" "}
         </div>{" "}

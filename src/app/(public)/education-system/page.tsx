@@ -275,7 +275,7 @@ export default async function EducationSystemPage() {
                 description:
                   "Lead institution for technical and vocational training and professional skills development programs.",
                 role: "TVET training, Skills development, Vocational excellence",
-                portal: "https://mitd.mu",
+                portal: "https://www.armeniaeducationinitiative.org/en/programs",
                 icon: Briefcase,
                 theme: "blue",
               },
@@ -284,7 +284,7 @@ export default async function EducationSystemPage() {
                 description:
                   "Critical for MBBS students. Registers doctors, recognizes medical degrees, and approves medical colleges.",
                 role: "Doctor registration, Degree recognition, Institution approvals",
-                portal: "https://medicalcouncilmu.org",
+                portal: "https://www.medicalcouncil-armenia.org/en/",
                 icon: Stethoscope,
                 theme: "red",
               },
@@ -491,7 +491,7 @@ export default async function EducationSystemPage() {
               {content.degreeCards.map((card, index) => {
                 const styles =
                   themeStyles[
-                    (card.theme ?? "red") as keyof typeof themeStyles
+                  (card.theme ?? "red") as keyof typeof themeStyles
                   ];
                 const isMbbsCard = /mbbs|mbchb|medicine/i.test(card.title);
                 const Icon = isMbbsCard

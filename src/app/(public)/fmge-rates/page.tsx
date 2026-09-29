@@ -45,11 +45,11 @@ export default async function FmgeRatesPage() {
       const latestRate = uniRates[0];
       const avgPass = uniRates.length
         ? uniRates.reduce(
-            (sum, r) =>
-              sum +
-              (r.passPercentage ? parseFloat(r.passPercentage.toString()) : 0),
-            0,
-          ) / uniRates.length
+          (sum, r) =>
+            sum +
+            (r.passPercentage ? parseFloat(r.passPercentage.toString()) : 0),
+          0,
+        ) / uniRates.length
         : null;
       return { ...uni, rates: uniRates, latestRate, avgPass };
     })
@@ -82,12 +82,12 @@ export default async function FmgeRatesPage() {
       <div className="bg-white text-gray-900 py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <BarChart3 className="w-10 h-10 text-green-300" />
+            <BarChart3 className="w-10 h-10 text-black" />
             <h1 className="text-4xl lg:text-5xl font-bold">
               FMGE / NExT Pass Rates
             </h1>
           </div>
-          <p className="text-xl text-green-100 max-w-3xl mx-auto mt-3">
+          <p className="text-xl text-black max-w-3xl mx-auto mt-3">
             Compare pass rates for Armenia MBBS graduates by university and
             year. Make an informed decision based on real performance data.
           </p>
@@ -106,8 +106,8 @@ export default async function FmgeRatesPage() {
               { label: "Top Pass Rate", value: topRate ? `${topRate}%` : "—" },
             ].map((s) => (
               <div key={s.label} className="bg-gray-100 rounded-2xl py-4 px-3">
-                <div className="text-2xl font-bold">{s.value}</div>
-                <div className="text-green-200 text-sm mt-1">{s.label}</div>
+                <div className="text-2xl font-bold text-green-600">{s.value}</div>
+                <div className="text-black text-sm mt-1">{s.label}</div>
               </div>
             ))}
           </div>

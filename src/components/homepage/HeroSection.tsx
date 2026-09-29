@@ -61,7 +61,7 @@ export default function HeroSection({ stats }: HeroSectionProps) {
 
               <button
                 onClick={() => openModal("MBBS in Armenia", FALLBACK_BROCHURE)}
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#101B4D] transition-colors"
+                className="border-2 border-white bg-[#F2A800] hover:bg-[#F29F00] text-black px-8 py-4 rounded-lg font-semibold transition-colors cursor-pointer"
                 suppressHydrationWarning={true}
               >
                 Download Brochure

@@ -171,7 +171,7 @@ export default function ContactPage() {
       val: "info@mbbsinarmenia.com",
       action: "Send Email",
       href: "mailto:info@mbbsinarmenia.com",
-      color: "bg-[#EAF1FB]0",
+      color: "bg-blue-500",
     },
     {
       icon: MessageSquare,

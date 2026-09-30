@@ -1,7 +1,7 @@
 import { prisma } from '../src/lib/prisma';
 
 async function main() {
-  console.log('🌱 Seeding 5 Mauritian Universities and Related Data with Coordinates...');
+  console.log('🌱 Seeding 5 Armenian Universities and Related Data with Coordinates...');
 
   const slugify = (text: string) => text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 
@@ -55,8 +55,8 @@ async function main() {
     {
       name: 'University of Armenia - Faculty of Medicine',
       uniqueId: 'MAU-UOM-003',
-      city: 'Réduit',
-      establishedYear: 1965,
+      city: 'Yerevan',
+      establishedYear: 1920,
       students: '12,000+ (Total)',
       tuitionFee: '$6,500',
       globalRanking: 'Top 1000 Global Universities',
@@ -69,11 +69,11 @@ async function main() {
       eligibility: 'High academic standing in 12th Grade (PCB), English proficiency',
       status: true,
       isFeatured: false,
-      provinceId: 4, // Moka
-      cityId: 9, // Saint Pierre (near Réduit)
+      provinceId: 10, // Yerevan
+      cityId: 13, // Yerevan
       instituteTypeId: 1, // Public
-      latitude: -20.232,
-      longitude: 57.500,
+      latitude: 40.181,
+      longitude: 44.513,
     },
     {
       name: 'JSS Academy of Higher Education and Research',
@@ -125,7 +125,7 @@ async function main() {
 
   for (const u of universities) {
     const slug = slugify(u.name);
-    
+
     // 1. Create/Update University
     const university = await prisma.university.upsert({
       where: { slug },
@@ -271,8 +271,8 @@ async function main() {
 
     const ssr = await prisma.university.findFirst({ where: { slug: 'ssr-medical-college-ssrmc' } });
     if (ssr) {
-      const existingLink = await prisma.universityHospital.findFirst({ 
-        where: { universityId: ssr.id, hospitalId: hospital.id } 
+      const existingLink = await prisma.universityHospital.findFirst({
+        where: { universityId: ssr.id, hospitalId: hospital.id }
       });
       if (!existingLink) {
         await prisma.universityHospital.create({ data: { universityId: ssr.id, hospitalId: hospital.id } });
@@ -281,8 +281,8 @@ async function main() {
 
     const anna = await prisma.university.findFirst({ where: { slug: 'anna-medical-college-amc' } });
     if (anna) {
-      const existingLink = await prisma.universityHospital.findFirst({ 
-        where: { universityId: anna.id, hospitalId: hospital.id } 
+      const existingLink = await prisma.universityHospital.findFirst({
+        where: { universityId: anna.id, hospitalId: hospital.id }
       });
       if (!existingLink) {
         await prisma.universityHospital.create({ data: { universityId: anna.id, hospitalId: hospital.id } });

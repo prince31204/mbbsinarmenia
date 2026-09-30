@@ -22,62 +22,64 @@ import {
   Wifi,
   Award,
   Compass,
-  Waves,
-  Palmtree,
+  Landmark,
+  Snowflake,
   SunMedium,
+  Church,
+  Bus,
 } from "lucide-react";
 
 export const essentialFacts = [
-  { icon: Building, color: "blue", label: "Capital", value: "Port Louis" },
-  { icon: Users, color: "green", label: "Population", value: "1.3 Million+" },
+  { icon: Building, color: "blue", label: "Capital", value: "Yerevan" },
+  { icon: Users, color: "green", label: "Population", value: "3 Million+" },
   {
     icon: Languages,
     color: "purple",
     label: "Languages",
-    value: "English, French, Creole",
+    value: "Armenian, Russian, English",
   },
   {
     icon: DollarSign,
     color: "orange",
     label: "Currency",
-    value: "Mauritian Rupee (MUR)",
+    value: "Armenian Dram (AMD)",
   },
-  { icon: MapPin, color: "red", label: "Location", value: "Indian Ocean" },
+  { icon: MapPin, color: "red", label: "Location", value: "South Caucasus" },
   { icon: Clock, color: "teal", label: "Timezone", value: "UTC+4" },
   {
     icon: Flag,
     color: "yellow",
     label: "Independence",
-    value: "March 12, 1968",
+    value: "September 21, 1991",
   },
   {
     icon: Mountain,
     color: "indigo",
     label: "Highest Peak",
-    value: "Piton de la P.R.N. (828 m)",
+    value: "Mount Aragats (4,090 m)",
   },
 ];
 
 export const geographyPoints = [
   {
-    icon: Waves,
-    color: "text-red-600",
-    text: "Stunning island nation surrounded by lagoons and reefs",
-  },
-  {
     icon: Mountain,
-    color: "text-green-600",
-    text: "Volcanic origins with spectacular mountain ranges",
+    color: "text-red-600",
+    text: "Landlocked highland country with dramatic volcanic landscapes",
   },
   {
-    icon: Palmtree,
+    icon: TreePine,
+    color: "text-green-600",
+    text: "Rich biodiversity with lush forests and alpine meadows",
+  },
+  {
+    icon: Landmark,
     color: "text-purple-600",
-    text: "Famous for white sandy beaches and turquoise waters",
+    text: "Home to ancient monasteries and UNESCO World Heritage sites",
   },
   {
     icon: Globe,
     color: "text-cyan-600",
-    text: "Strategic location in the Indian Ocean off East Africa",
+    text: "Strategic crossroads between Europe and Asia in the Caucasus",
   },
 ];
 
@@ -85,111 +87,111 @@ export const climateZones = [
   {
     icon: SunMedium,
     color: "text-orange-500",
-    text: "Tropical climate with warm weather year-round",
+    text: "Hot, dry summers with temperatures reaching 35°C+",
   },
   {
-    icon: Waves,
+    icon: Snowflake,
     color: "text-red-500",
-    text: "Mild maritime influences from the Indian Ocean",
+    text: "Cold snowy winters, especially in highland regions",
   },
   {
     icon: Calendar,
     color: "text-green-500",
-    text: "Two main seasons: Summer and Winter",
+    text: "Four distinct seasons: Spring, Summer, Autumn, Winter",
   },
   {
     icon: Sun,
     color: "text-red-600",
-    text: "Abundant sunshine perfect for student life",
+    text: "Over 300 sunny days per year — ideal for student life",
   },
 ];
 
 export const attractions = [
   {
-    icon: Mountain,
+    icon: Church,
     color: "text-slate-600",
-    name: "Le Morne Brabant",
-    desc: "UNESCO World Heritage site with iconic monolith",
+    name: "Garni Temple",
+    desc: "Iconic 1st-century Hellenistic temple overlooking the Azat River gorge",
+  },
+  {
+    icon: Landmark,
+    color: "text-green-200",
+    name: "Geghard Monastery",
+    desc: "UNESCO World Heritage site carved into a mountainside cliff",
   },
   {
     icon: Compass,
-    color: "text-green-200",
-    name: "Seven Coloured Earths",
-    desc: "Natural phenomenon of colorful sand dunes in Chamarel",
-  },
-  {
-    icon: TreePine,
     color: "text-purple-200",
-    name: "Black River Gorges",
-    desc: "Vast national park with waterfalls and native wildlife",
+    name: "Lake Sevan",
+    desc: "One of the largest high-altitude freshwater lakes in the world",
   },
   {
-    icon: Waves,
+    icon: Mountain,
     color: "text-red-600",
-    name: "Grand Baie",
-    desc: "Popular coastal village known for beaches and lifestyle",
+    name: "Tatev Monastery",
+    desc: "Medieval monastery accessible via the world's longest aerial tramway",
   },
 ];
 
 export const majorCities = [
   {
-    name: "Port Louis",
+    name: "Yerevan",
     gradient: " ",
     textMain: "text-slate-600",
     textSub: "text-slate-600",
-    desc: "The bustling capital city and major economic and administrative hub.",
-    pop: "150,000+",
-    highlight: "Political and Cultural Center",
+    desc: "The vibrant capital city known as the 'Pink City' — the cultural, economic, and educational heart of Armenia.",
+    pop: "1,100,000+",
+    highlight: "Capital & Educational Hub",
   },
   {
-    name: "Curepipe",
+    name: "Gyumri",
     gradient: " ",
     textMain: "text-green-100",
     textSub: "text-green-200",
-    desc: "A major urban center in the Plaines Wilhems known for its cool climate.",
-    pop: "80,000+",
-    highlight: "Residential and Educational Hub",
+    desc: "Armenia's second-largest city, renowned for its rich cultural heritage and historic architecture.",
+    pop: "120,000+",
+    highlight: "Cultural & Historical Center",
   },
   {
-    name: "Quatre Bornes",
+    name: "Vanadzor",
     gradient: " ",
     textMain: "text-orange-100",
     textSub: "text-orange-200",
-    desc: "Known as 'The Flower Town', a vibrant commercial and residential city.",
-    pop: "75,000+",
-    highlight: "Central and Accessible",
+    desc: "The third-largest city surrounded by mountains, known for its pleasant climate and green spaces.",
+    pop: "80,000+",
+    highlight: "Industrial & Academic City",
   },
 ];
 
 export const defaultCuisines = [
   {
     id: 0,
-    iconClass: "🍲",
-    dishName: "Dholl Puri",
+    iconClass: "🍖",
+    dishName: "Khorovats",
     dishDescription:
-      "Armenia' most popular street food - soft flatbread with split peas",
+      "Armenia's beloved barbecue — marinated meat grilled over charcoal, a national tradition",
     dishImage: null,
   },
   {
     id: 1,
-    iconClass: "🍛",
-    dishName: "Mauritian Biryani",
-    dishDescription: "Fragrant rice dish with spices, meat or vegetables",
+    iconClass: "🥘",
+    dishName: "Dolma",
+    dishDescription: "Grape leaves stuffed with seasoned meat, rice, and fresh herbs",
     dishImage: null,
   },
   {
     id: 2,
-    iconClass: "🥘",
-    dishName: "Rougaille",
+    iconClass: "🫓",
+    dishName: "Lavash",
     dishDescription:
-      "Classic tomato-based sauce with mediterranean and creole influences",
+      "UNESCO-recognized traditional Armenian flatbread baked in a clay tonir oven",
     dishImage: null,
   },
   {
     id: 3,
-    iconClass: "🥟",
-    dishName: "Gateau Piment",
-    dishDescription: "Deep-fried split pea cakes with chili and herbs",
+    iconClass: "🎃",
+    dishName: "Ghapama",
+    dishDescription: "Festive stuffed pumpkin filled with rice, dried fruits, nuts, and honey",
     dishImage: null,
   },
 ];
@@ -198,22 +200,22 @@ export const transportOptions = [
   {
     icon: Plane,
     color: "text-red-600",
-    text: "Sir Seewoosagur Ramgoolam Intl Airport (MRU)",
+    text: "Zvartnots International Airport (EVN) — main gateway to Armenia",
+  },
+  {
+    icon: Bus,
+    color: "text-orange-600",
+    text: "Affordable intercity marshrutka and bus network across the country",
   },
   {
     icon: Car,
-    color: "text-orange-600",
-    text: "Modern Metro Express connecting major urban centers",
-  },
-  {
-    icon: Globe,
     color: "text-purple-600",
-    text: "Extensive bus network covering the entire island",
+    text: "Yerevan Metro and extensive city transport system",
   },
   {
     icon: Wifi,
     color: "text-green-600",
-    text: "Reliable ride-hailing services and affordable car rentals",
+    text: "Reliable ride-hailing apps (GG, Yandex) and affordable taxi services",
   },
 ];
 
@@ -244,12 +246,12 @@ export const mbbsHighlights = [
   {
     icon: Stethoscope,
     label: "International Recognition",
-    desc: "Degrees recognized by GMC, NMC, and global medical bodies.",
+    desc: "Degrees recognized by NMC, WHO, and global medical bodies.",
   },
   {
     icon: DollarSign,
-    label: "Reasonable Fee Structure",
-    desc: "High-quality medical education with manageable tuition fees.",
+    label: "Affordable Fee Structure",
+    desc: "High-quality medical education at a fraction of private college costs.",
   },
   {
     icon: Languages,
@@ -259,29 +261,29 @@ export const mbbsHighlights = [
 ];
 
 export const economyStats = [
-  { label: "Stability", value: "High Economic Freedom" },
-  { label: "Main Industries", value: "Tourism, Finance, Textiles" },
+  { label: "Stability", value: "Growing & Stable Economy" },
+  { label: "Main Industries", value: "IT, Mining, Agriculture, Tourism" },
   { label: "Health Hub", value: "Developing Regional Center" },
-  { label: "Quality of Life", value: "High Safety Standards" },
+  { label: "Quality of Life", value: "High Safety & Low Cost of Living" },
 ];
 
 export const quickFacts = [
   {
     icon: Calendar,
     label: "Independence",
-    value: "March 12, 1968",
+    value: "September 21, 1991",
     color: "text-indigo-200",
   },
   {
-    icon: Waves,
-    label: "Coastline",
-    value: "330 km+",
+    icon: Mountain,
+    label: "Land Area",
+    value: "29,743 km²",
     color: "text-slate-600",
   },
   {
     icon: Globe,
     label: "Region",
-    value: "Indian Ocean",
+    value: "South Caucasus",
     color: "text-green-200",
   },
   {
@@ -295,17 +297,17 @@ export const quickFacts = [
 export const healthcare = [
   {
     title: "Public Healthcare",
-    desc: "Reliable government healthcare system available across the island.",
+    desc: "Reliable government healthcare system available throughout the country.",
     color: "border-gray-200",
   },
   {
     title: "Private Healthcare",
-    desc: "High-standard private clinics and specialized medical centers.",
+    desc: "High-standard private clinics and specialized medical centers in Yerevan.",
     color: "border-green-200",
   },
   {
     title: "Medical Exposure",
-    desc: "Students benefit from clinical rotations in both public and private blocks.",
+    desc: "Students benefit from clinical rotations in both public and private hospitals.",
     color: "border-purple-200",
   },
 ];

@@ -24,10 +24,10 @@ type MinistryCard = {
 
 const EMBASSY_INFO = {
   name: "Armenia High Commission in New Delhi, India",
-  address: "EP-41, Jesus & Mary Marg, Chanakyapuri, New Delhi - 110021",
-  phone: "+91 11 2410 2161",
-  email: "mhcnewdelhi@govmu.org",
-  website: "https://foreign.govmu.org",
+  address: "Armenia Street, D-133, Anand Niketan, New Delhi – 110021.",
+  phone: "+91 11 2411 2851",
+  email: "armindiaembassy@mfa.am",
+  website: "https://india.mfa.am/en/",
   consular:
     "Consular appointments are handled through official mission channels",
   hours: "Monday to Friday: 9:00 AM - 4:00 PM",
@@ -142,7 +142,7 @@ function mapOfficialLinkToCard(link: OfficialGovernmentLink): MinistryCard {
     parsedServices.length > 0
       ? "Official government resource for student and institutional guidance."
       : rawDescription ||
-        "Official government resource for student and institutional guidance.";
+      "Official government resource for student and institutional guidance.";
 
   return {
     id: link.id,

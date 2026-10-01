@@ -26,7 +26,6 @@ import {
   Snowflake,
   SunMedium,
   Church,
-  Bus,
 } from "lucide-react";
 
 export const essentialFacts = [
@@ -203,7 +202,7 @@ export const transportOptions = [
     text: "Zvartnots International Airport (EVN) — main gateway to Armenia",
   },
   {
-    icon: Bus,
+    icon: MapPin,
     color: "text-orange-600",
     text: "Affordable intercity marshrutka and bus network across the country",
   },
